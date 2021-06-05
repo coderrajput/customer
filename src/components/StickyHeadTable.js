@@ -127,11 +127,11 @@ export default function StickyHeadTable(props) {
               console.log(row.id);
               return (
                 
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code} className={classes.onHover} onClick={()=>handleDetailView(row.id)}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code} className={classes.onHover} >
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
-                      <TableCell key={column.id} align={column.align}>
+                      <TableCell key={column.id} align={column.align} onClick={()=>handleDetailView(row.id)}>
                         {column.format  ? column.format(value) : value}
                       </TableCell>
                     );
